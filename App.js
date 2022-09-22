@@ -1,28 +1,64 @@
 
-import React, { useState } from 'react';
-import { Text, View, StyleSheet, Button, TextInput } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Text, View, StyleSheet, Button, TextInput, SafeAreaView } from 'react-native';
+import { Alert } from 'react-native-web';
 
 const BotorNotApp = () => {
   const [titleText, setTitleText] = useState("Twitter's Bot or Not");
   const bodyText = "Input Twitter handle below:";
   const inputtext = "@twitterhandle";
+  const [number, onChangeNumber] = React.useState(null);
+  const [tweeter, setHandle] = useState('');
+  const [data, setData] = useState([]);
+
+
+  
+
+  useEffect(() => {
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer AAAAAAAAAAAAAAAAAAAAAG9%2FhAEAAAAAjr6zswcErhKyOsEHPCtV0zq%2BX4A%3DDfbx0OX7YVHgtM6AHFOJWMyt23MveToG9GR6qSeJ4wnDklPRp3");
+  
+    var requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+  };
+  
+  fetch("https://api.twitter.com/2/users/by/username/elonmusk", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+  });  
+
+
+
+
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.baseText}>
         <Text style={styles.titleText}>{titleText}</Text>
         <Text numberOfLines={5}>{"\n\n\n\n"}
           {bodyText}</Text>
       </Text>
-      <TextInput style={styles.textinput}>{inputtext}</TextInput>
-    </View>
+      <TextInput 
+        style={styles.textinput}
+        placeholder={inputtext}
+        keyboardType="numeric"
+        onChangeText={(val) => setHandle(val)}
+      />
+      <Button
+        title = "Submit Tweeter"
+        onPress={() => {alert('Looking for user ' + tweeter)}}
+      />
+    </SafeAreaView>
   );
 };
 
 
 
-
 //TextStyle
+
 const styles = StyleSheet.create({
   baseText: {
     fontFamily: "Cochin",
