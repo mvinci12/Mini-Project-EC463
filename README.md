@@ -1,3 +1,11 @@
 # mini-project-EC463
 
 Mark Vinciguerra and Ignacio Núñez
+
+Our app, "Twitter's Bot or Not" was made using React Native, written in JavaScript, and available to be deployed as an iOS application. Using the React Native Tutorial and other resources on that website, we were able to make a simple, intuitive, user interface for the app. All the user needs to do to look for a twitter account, is type in the user's handle where it's prompted. I enjoyed using React Native because it was fairly intuitive after going through the tutorial. I also liked how I was able to simulate the app on the right side of the screen and in real time as I edited the code, the app would adjust accordingly which I found helpful. 
+
+After applying for the Twitter Developer Elevated account, we were able to use free Twitter API's. Our app calls Twitter API's from RapidAPI, the API that "Botometer" uses, and an API from Postman. The Postman API returns the user's name, screen name, and user ID. As of now, our app only prints the User's ID. Regarding the API from Rapid API, "check account" that would return the likelyhood of the user being a bot, I was having trouble with the Rapid API account plans and I kept receiving "This endpoint is disabled for your subscription" or " {"error": "Bad Request", "message": "The browser (or proxy) sent a request that this server could not understand."}" so I have been trying to get help from Rapid API services. Although, this was the case, I was able to call the python code in the folder "botometer-python" and that successfully gave me results for how automated an account is. Since this worked, I tried using Python Flask and other services in order to call this python script via App.js but it got very complicated and needed more time to figure that out, so I am just submitting this right now. 
+
+We also were able to make a Google Cloud account but unfornutaley didn't have the time to keep playing with and figuring out Google NLP. 
+
+Overall, this was a very fun and interesting project to work on. We have never had experience with API's and app building before so it was cool to learn what is behind the scenes of an application! It definitely wants makes me want to play with app creating in the future on my own time. 
